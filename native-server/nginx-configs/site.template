@@ -1,21 +1,20 @@
 server {
-    listen 808{{ID}};             # Порт будет 8081, 8082 и т.д.
+    listen 808{{ID}};
     server_name localhost;
     root /var/www/site{{ID}}/public_html;
     index index.php index.html;
 
     access_log /var/log/nginx/site{{ID}}_access.log;
-    error_log /var/log/nginx/site{{ID}_error.log;
+    error_log /var/log/nginx/site{{ID}}_error.log;
 
     location / {
         try_files $uri $uri/ =404;
     }
 
-    # Настройка обработки PHP
     location ~ \.php$ {
         include fastcgi_params;
         fastcgi_intercept_errors on;
-        fastcgi_pass unix:/run/php-fpm/www.sock; 
+        fastcgi_pass unix:/run/php-fpm/www.sock;
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
     }
 }
