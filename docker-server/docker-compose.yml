@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  site1:
+    image: php:8.3-apache
+    container_name: site1-container
+    ports:
+      - "9081:80"
+    volumes:
+      - ./site1:/var/www/html
+
+  site2:
+    image: php:8.3-apache
+    container_name: site2-container
+    ports:
+      - "9082:80"
+    volumes:
+      - ./site2:/var/www/html
+
+  site3:
+    image: php:8.3-apache
+    container_name: site3-container
+    ports:
+      - "9083:80"
+    volumes:
+      - ./site3:/var/www/html
+
+  site4:
+    image: php:8.3-apache
+    container_name: site4-container
+    ports:
+      - "9084:80"
+    volumes:
+      - ./site4:/var/www/html
+
+  site5:
+    image: php:8.3-apache
+    container_name: site5-container
+    ports:
+      - "9085:80"
+    volumes:
+      - ./site5:/var/www/html
+
+  site6:
+    image: php:8.3-apache
+    container_name: site6-container
+    ports:
+      - "9086:80"
+    volumes:
+      - ./site6:/var/www/html
